@@ -11,14 +11,17 @@ export function Register ():JSX.Element{
     const [email,setEmail]=React.useState<string>("")
     const [isChecked,setIsChecked]=React.useState<boolean>(false)
     
-      function onclickRegisterHandleEvent(firstName:string,lastName:string,email:string,password:string,checkboxx:boolean)
+function onclickRegisterHandleEvent(firstName:string,lastName:string,email:string,password:string,isChecked:boolean)
    {
     if(password!==confPassword){
         console.log("Confirm password is wrong !")
     }
-    if(firstName!=="" && lastName!=="" && password!=="" && confPassword===password && email!=="" && checkboxx===true){
+    if(firstName!=="" && lastName!=="" && password!=="" && confPassword===password && email!=="" && isChecked===true){
     navigate("/login")}
    }
+   function onclickCancelHandleEvent(){
+    navigate("/login")
+}
    
     return (
         <div className="rgstr">
@@ -64,7 +67,7 @@ export function Register ():JSX.Element{
             </div>
             <br/>
             <button type="submit" className="button" onClick={()=>{onclickRegisterHandleEvent(firstName,lastName,email,password,isChecked)}}>Register</button> 
-           
+            <button type="submit" className="button" onClick={()=>{onclickCancelHandleEvent()}}>Cancel</button> 
         </div>
     )
 }
