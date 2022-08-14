@@ -1,6 +1,8 @@
 import React from 'react'
 import { useNavigate } from "react-router-dom";
 
+import {onclickRegisterHandleEvent} from "../register"
+
 export function Login():JSX.Element {
     
     const [email,setEmail]=React.useState<string>("")
@@ -16,7 +18,7 @@ export function Login():JSX.Element {
 
   return (
         <div  style={{gap:"30px"}}>
-    <h1>Login </h1>
+    <h1>Taskify </h1>
     <div className="lgn">
     <div className="d-flex">
         <span>Email  </span></div><div>
@@ -28,7 +30,8 @@ export function Login():JSX.Element {
     <input type="password" className="input" placeholder='Password' name="password" 
     value={password} onChange={(event)=>setPassword(event.target.value)}/>
     </div></div>
-    <button type="submit" className="button" onClick={()=>{onclickLoginHandleEvent(email,password)}}>Valider</button>
+    <button type="submit" className="button" onClick={()=>{onclickLoginHandleEvent(email,password)}}>Login</button>
+    <button type="submit" className="button" onClick={()=>{onclickRegisterHandleEvent(firstName,lastName,email,password,isChecked)}}>Login</button>
 </div>
   
   )
