@@ -11,7 +11,7 @@ export function Login():JSX.Element {
    {  
     if(email!=="" && password!=="")
     {
-        navigate("/profile")}
+        navigate("/taskify")}
    
 }
 function onclickRegisterHandleEvent(){
@@ -28,13 +28,13 @@ function onclickRegisterHandleEvent(){
      onChange={(event)=>setEmail(event.target.value)}/>
     </div>
     <div className='d-flex'>
-        <span>Mot de passe </span> </div><div> 
+        <span>Mot de passe </span> </div>
     <input type="password" className="input" placeholder='Password' name="password" 
     value={password} onChange={(event)=>setPassword(event.target.value)}/>
-    </div></div>
+    
     <button type="submit" className="button" onClick={()=>{onclickLoginHandleEvent(email,password)}}>Login</button>
     <button type="submit" className="button" onClick={()=>{onclickRegisterHandleEvent()}}>Register</button>
-</div>
+</div></div>
   
   )
 }

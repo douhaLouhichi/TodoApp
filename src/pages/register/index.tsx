@@ -17,10 +17,10 @@ function onclickRegisterHandleEvent(firstName:string,lastName:string,email:strin
         console.log("Confirm password is wrong !")
     }
     if(firstName!=="" && lastName!=="" && password!=="" && confPassword===password && email!=="" && isChecked===true){
-    navigate("/login")}
+    navigate("/")}
    }
    function onclickCancelHandleEvent(){
-    navigate("/login")
+    navigate("/")
 }
    
     return (
